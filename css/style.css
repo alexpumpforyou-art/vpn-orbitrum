@@ -1687,23 +1687,6 @@ p { margin: 0; }
   border-color: rgba(255,107,31,0.5);
 }
 
-@media (max-width: 768px) {
-  .cmp__table { min-width: 600px; }
-  .cmp__th:first-child,
-  .cmp__label {
-    position: sticky;
-    left: 0;
-    z-index: 10;
-    background: var(--bg-elev-2);
-    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-  }
-  .cmp__row:nth-child(even) .cmp__label {
-    background: #1a1a24; /* match the even row bg to keep it solid */
-  }
-  .cmp__row:hover .cmp__label {
-    background: #1f1f2a;
-  }
-}
 
 /* ============================================================
    DOWNLOAD — платформы
