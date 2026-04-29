@@ -637,8 +637,8 @@ p { margin: 0; }
   .bento__card-title { font-size: 19px; }
 }
 
-/* ---------- Buttons ---------- */
 .btn {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2706,26 +2706,35 @@ p { margin: 0; }
 
 @media (max-width: 768px) {
   .cmp__inner {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 16px; /* space for scrollbar */
+    overflow-x: hidden;
   }
   .cmp__table {
-    min-width: 600px; /* Ensures horizontal scroll */
+    min-width: 100%;
+    table-layout: fixed;
   }
-  .cmp__th:first-child,
+  .cmp__table th:nth-child(4),
+  .cmp__table td:nth-child(4),
+  .cmp__table th:nth-child(5),
+  .cmp__table td:nth-child(5),
+  .cmp__table col:nth-child(4),
+  .cmp__table col:nth-child(5) {
+    display: none;
+  }
+  .cmp__table col:nth-child(1) { width: 44% !important; }
+  .cmp__table col:nth-child(2) { width: 28% !important; }
+  .cmp__table col:nth-child(3) { width: 28% !important; }
+  
   .cmp__label {
-    position: sticky;
-    left: 0;
-    z-index: 10;
-    background: var(--bg-elev-2);
-    box-shadow: 2px 0 8px rgba(0,0,0,0.25);
+    font-size: 13px;
+    padding: 12px 8px;
   }
-  .cmp__row:nth-child(even) .cmp__label {
-    background: #15151c; /* matches alternating rows */
+  .cmp__brand-name {
+    font-size: 11px;
+    text-align: center;
   }
-  .cmp__row:hover .cmp__label {
-    background: #1c1c25;
+  .cmp__brand {
+    flex-direction: column;
+    gap: 6px;
   }
 }
 
