@@ -936,6 +936,9 @@ p { margin: 0; }
   .header__login {
     display: none;
   }
+  .header__actions {
+    margin-left: auto;
+  }
   .header__burger { display: flex; }
 }
 @media (max-width: 540px) {
@@ -1144,9 +1147,8 @@ p { margin: 0; }
     text-align: center;
   }
   .hero__visual {
-    grid-row: 1;
     max-width: 360px;
-    margin: 0 auto 24px;
+    margin: 0 auto;
   }
   .hero__actions, .hero__badges {
     justify-content: center;
@@ -2709,32 +2711,82 @@ p { margin: 0; }
     overflow-x: hidden;
   }
   .cmp__table {
-    min-width: 100%;
-    table-layout: fixed;
+    display: block;
+    width: 100%;
+  }
+  .cmp__table thead {
+    display: block;
+  }
+  .cmp__table tbody {
+    display: block;
+  }
+  .cmp__table tr {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
   }
   .cmp__table th:nth-child(4),
   .cmp__table td:nth-child(4),
   .cmp__table th:nth-child(5),
-  .cmp__table td:nth-child(5),
-  .cmp__table col:nth-child(4),
-  .cmp__table col:nth-child(5) {
+  .cmp__table td:nth-child(5) {
+    display: none !important;
+  }
+  
+  .cmp__table thead tr {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  .cmp__table th:first-child {
     display: none;
   }
-  .cmp__table col:nth-child(1) { width: 44% !important; }
-  .cmp__table col:nth-child(2) { width: 28% !important; }
-  .cmp__table col:nth-child(3) { width: 28% !important; }
+  .cmp__table th.cmp__th--us,
+  .cmp__table th:nth-child(3) {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background: transparent;
+  }
+  
+  .cmp__row {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: transparent !important;
+  }
   
   .cmp__label {
-    font-size: 13px;
-    padding: 12px 8px;
+    width: 100%;
+    text-align: center;
+    padding: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent !important;
+    position: static;
+    box-shadow: none;
+  }
+  
+  .cmp__cell.cmp__cell--us,
+  .cmp__cell:nth-child(3) {
+    width: 50%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cmp__icon {
+    margin: 0;
   }
   .cmp__brand-name {
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
   }
   .cmp__brand {
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 }
 
