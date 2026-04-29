@@ -2693,85 +2693,79 @@ p { margin: 0; }
   .cmp__inner {
     overflow-x: hidden;
   }
-  .cmp__table {
+  .cmp__table,
+  .cmp__table thead,
+  .cmp__table tbody,
+  .cmp__table th,
+  .cmp__table td,
+  .cmp__table tr {
     display: block;
     width: 100%;
     min-width: 0;
   }
-  .cmp__table thead {
-    display: block;
-  }
-  .cmp__table tbody {
-    display: block;
-  }
-  .cmp__table tr {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .cmp__table th:nth-child(4),
-  .cmp__table td:nth-child(4),
-  .cmp__table th:nth-child(5),
-  .cmp__table td:nth-child(5) {
-    display: none !important;
-  }
   
-  .cmp__table thead tr {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-  }
-  .cmp__table th:first-child {
+  .cmp__table thead {
     display: none;
-  }
-  .cmp__table th.cmp__th--us,
-  .cmp__table th:nth-child(3) {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    border: none;
-    background: transparent;
   }
   
   .cmp__row {
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    background: transparent !important;
+    margin-bottom: 24px;
+    background: var(--bg-elev-2) !important;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    padding: 0;
+  }
+  .cmp__row:last-child {
+    margin-bottom: 0;
   }
   
   .cmp__label {
-    width: 100%;
+    background: rgba(255,107,31,0.06) !important;
+    color: var(--text) !important;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px;
     text-align: center;
-    padding: 0 0 12px 0;
+    border-bottom: 1px solid var(--border) !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    position: static;
+    box-shadow: none;
+  }
+  
+  .cmp__cell {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 14px 20px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    border-right: none !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  .cmp__cell:last-child {
+    border-bottom: none !important;
+  }
+  
+  .cmp__cell::before {
+    display: block;
     font-size: 14px;
     font-weight: 500;
     color: var(--text-secondary);
-    background: transparent !important;
-    position: static;
-    box-shadow: none;
-    border: none;
   }
   
-  .cmp__cell.cmp__cell--us,
-  .cmp__cell:nth-child(3) {
-    width: 50%;
-    padding: 0;
-    border: none;
-    background: transparent;
-    display: flex;
-    justify-content: center;
+  .cmp__cell.cmp__cell--us::before { 
+    content: "Orbitum VPN"; 
+    color: var(--primary);
   }
+  .cmp__cell:nth-child(3)::before { content: "ВПН из Телеграм"; }
+  .cmp__cell:nth-child(4)::before { content: "Hit VPN"; }
+  .cmp__cell:nth-child(5)::before { content: "JumpVPN"; }
   
   .cmp__icon {
-    margin: 0;
-  }
-  .cmp__brand-name {
-    font-size: 12px;
-    text-align: center;
-  }
-  .cmp__brand {
-    flex-direction: column;
-    gap: 8px;
+    margin: 0 !important;
   }
 }
 
