@@ -2696,6 +2696,7 @@ p { margin: 0; }
   .cmp__table {
     display: block;
     width: 100%;
+    min-width: 0;
   }
   .cmp__table thead {
     display: block;
@@ -2748,6 +2749,7 @@ p { margin: 0; }
     background: transparent !important;
     position: static;
     box-shadow: none;
+    border: none;
   }
   
   .cmp__cell.cmp__cell--us,
